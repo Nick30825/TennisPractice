@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace TennisPractice
 {
     [TestClass]
-    public class UnitTest1
+    public class TennisTests
     {
         [TestMethod]
         public void TestMethod1()
