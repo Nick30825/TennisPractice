@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace TennisPractice
 {
@@ -9,9 +10,17 @@ namespace TennisPractice
 
         public String Score()
         {
+            var scoreLookup= new Dictionary< int , String >
+            {
+                {1, "Fifteen Love" },
+            };
             if (_firstPlyaerScoreTimes == 1)
             {
-                return "Fifteen Love";
+                return $"{scoreLookup[_firstPlyaerScoreTimes]}";
+            }
+            if (_firstPlyaerScoreTimes == 2)
+            {
+                return "Thirty Love";
             }
             return "Love All";
         }

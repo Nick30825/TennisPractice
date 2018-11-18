@@ -21,6 +21,14 @@ namespace TennisPractice
             ScoreShouldBe("Fifteen Love");
         }
         
+        [TestMethod]
+        public void Thirty_Love()
+        {
+            _tennis.FirstPlayerScore();
+            _tennis.FirstPlayerScore();
+            ScoreShouldBe("Thirty Love");
+        }
+        
         private void ScoreShouldBe(string excepted)
         {
             Assert.AreEqual(excepted, _tennis.Score());
