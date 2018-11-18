@@ -10,7 +10,7 @@ namespace TennisPractice
         public void LoveAll()
         {
             var tennis = new Tennis();
-            tennis.Score();
+            Assert.AreEqual("Love All",tennis.Score());
 
 
         }

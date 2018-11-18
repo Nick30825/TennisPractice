@@ -4,9 +4,9 @@ namespace TennisPractice
 {
     public class Tennis
     {
-        internal void Score()
+        public String Score()
         {
-            throw new NotImplementedException();
+            return "Love All";
         }
     }
 }
