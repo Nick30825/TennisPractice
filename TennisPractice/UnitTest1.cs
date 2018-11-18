@@ -7,8 +7,13 @@ namespace TennisPractice
     public class TennisTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void LoveAll()
         {
+            var tennis = new Tennis();
+            tennis.Score();
+
+
         }
     }
 }
+
