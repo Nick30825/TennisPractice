@@ -12,15 +12,16 @@ namespace TennisPractice
         {
             var scoreLookup= new Dictionary< int , String >
             {
-                {1, "Fifteen Love" },
+                {1, "Fifteen" },
+                {2, "Thirty" },
             };
             if (_firstPlyaerScoreTimes == 1)
             {
-                return $"{scoreLookup[_firstPlyaerScoreTimes]}";
+                return $"{scoreLookup[_firstPlyaerScoreTimes]} Love";
             }
             if (_firstPlyaerScoreTimes == 2)
             {
-                return "Thirty Love";
+                return $"{scoreLookup[_firstPlyaerScoreTimes]} Love";
             }
             return "Love All";
         }
