@@ -6,23 +6,21 @@ namespace TennisPractice
     public class Tennis
     {
         private int _firstPlyaerScoreTimes;
+        private Dictionary<int, string> _ScoreLookup;
 
 
         public String Score()
         {
-            var scoreLookup= new Dictionary< int , String >
+            _ScoreLookup = new Dictionary< int , String >
             {
                 {1, "Fifteen" },
                 {2, "Thirty" },
             };
-            if (_firstPlyaerScoreTimes == 1)
+            if (_firstPlyaerScoreTimes == 1 || _firstPlyaerScoreTimes == 2)
             {
-                return $"{scoreLookup[_firstPlyaerScoreTimes]} Love";
+                return $"{_ScoreLookup[_firstPlyaerScoreTimes]} Love";
             }
-            if (_firstPlyaerScoreTimes == 2)
-            {
-                return $"{scoreLookup[_firstPlyaerScoreTimes]} Love";
-            }
+            
             return "Love All";
         }
 
