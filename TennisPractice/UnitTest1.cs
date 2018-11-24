@@ -39,10 +39,11 @@ namespace TennisPractice
             _tennis.SecondPlayerScore();
             ScoreShouldBe("Love Fifteen");
         }
-        public void Love_Forty()
+        [TestMethod]
+        public void Love_Thirty()
         {
             GivenSecondPlayerTimes(2);
-            ScoreShouldBe("Love Fifteen");
+            ScoreShouldBe("Love Thirty");
         }
 
         private void GivenSecondPlayerTimes(int times)
