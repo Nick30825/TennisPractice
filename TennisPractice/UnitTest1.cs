@@ -39,6 +39,19 @@ namespace TennisPractice
             _tennis.SecondPlayerScore();
             ScoreShouldBe("Love Fifteen");
         }
+        public void Love_Forty()
+        {
+            GivenSecondPlayerTimes(2);
+            ScoreShouldBe("Love Fifteen");
+        }
+
+        private void GivenSecondPlayerTimes(int times)
+        {
+            for (var i = 0; i < times; i++)
+            {
+                _tennis.SecondPlayerScore();
+            }
+        }
 
         private void GivenFirstPlayerScoreTimes(int times)
         {
