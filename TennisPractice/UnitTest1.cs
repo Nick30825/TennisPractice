@@ -27,6 +27,12 @@ namespace TennisPractice
             GivenFirstPlayerScoreTimes(2);
             ScoreShouldBe("Thirty Love");
         }
+        [TestMethod]
+        public void Forty_Love()
+        {
+            GivenFirstPlayerScoreTimes(3);
+            ScoreShouldBe("Forty Love");
+        }
 
         private void GivenFirstPlayerScoreTimes(int times)
         {

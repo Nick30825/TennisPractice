@@ -15,8 +15,9 @@ namespace TennisPractice
             {
                 {1, "Fifteen" },
                 {2, "Thirty" },
+                {3, "Forty" },
             };
-            if (_firstPlyaerScoreTimes == 1 || _firstPlyaerScoreTimes == 2)
+            if (_firstPlyaerScoreTimes>0)
             {
                 return $"{_ScoreLookup[_firstPlyaerScoreTimes]} Love";
             }
