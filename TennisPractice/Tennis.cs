@@ -17,17 +17,22 @@ namespace TennisPractice
 
         public String Score()
         {
-            
             if (_firstPlayerScoreTimes != _secondPlayerScoreTimes )
             {
-                return $"{_ScoreLookup[_firstPlayerScoreTimes]} {_ScoreLookup[_secondPlayerScoreTimes]}";
+                return LookupScore();
             }
 
-            if (_firstPlayerScoreTimes == 1)
-            {
-                return "Fifteen All";
-            }
-            return "Love All";
+            return SomeScore();
+        }
+
+        private string LookupScore()
+        {
+            return $"{_ScoreLookup[_firstPlayerScoreTimes]} {_ScoreLookup[_secondPlayerScoreTimes]}";
+        }
+
+        private string SomeScore()
+        {
+            return $"{_ScoreLookup[_firstPlayerScoreTimes]} All";
         }
 
         public void FirstPlayerScore()
