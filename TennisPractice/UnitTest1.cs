@@ -15,9 +15,9 @@ namespace TennisPractice
         }
 
         [TestMethod]
-        public void Fiftenn_Love()
+        public void Fifteen_Love()
         {
-            _tennis.FirstPlayerScore();
+            GivenFirstPlayerScoreTimes(1);
             ScoreShouldBe("Fifteen Love");
         }
         
@@ -32,6 +32,12 @@ namespace TennisPractice
         {
             GivenFirstPlayerScoreTimes(3);
             ScoreShouldBe("Forty Love");
+        }
+        [TestMethod]
+        public void Love_Fifteen()
+        {
+            _tennis.SecondPlayerScore();
+            ScoreShouldBe("Love Fifteen");
         }
 
         private void GivenFirstPlayerScoreTimes(int times)
