@@ -14,18 +14,41 @@ namespace TennisPractice
             {3, "Forty" },
         };
         private int _secondPlayerScoreTimes;
+        private string _firstPlayerName;
+
+        public Tennis(string firstPlayerName)
+        {
+            _firstPlayerName = firstPlayerName;
+        }
 
         public String Score()
         {
-            if (_firstPlayerScoreTimes != _secondPlayerScoreTimes )
+            if (IsScoreDifferent() )
             {
+                if (_firstPlayerScoreTimes>=3)
+                {
+                    if (_firstPlayerScoreTimes - _secondPlayerScoreTimes == 1)
+                    {
+                        return $"{_firstPlayerName} Adv";
+                    }
+                }
                 return LookupScore();
             }
 
-            if (_firstPlayerScoreTimes >= 3)
+            if (IsDeuce())
                 return "Deuce";
 
          return SomeScore();
+        }
+
+        private bool IsDeuce()
+        {
+            return _firstPlayerScoreTimes >= 3;
+        }
+
+        private bool IsScoreDifferent()
+        {
+            return _firstPlayerScoreTimes != _secondPlayerScoreTimes;
         }
 
         private string LookupScore()
