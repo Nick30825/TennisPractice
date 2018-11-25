@@ -28,14 +28,11 @@ namespace TennisPractice
         {
             if (IsScoreDifferent() )
             {
-                if (_firstPlayerScoreTimes>=3 || _secondPlayerScoreTimes>=3)
+                if (IsReadyForGamePoint())
                 {
-                    if (Math.Abs(_firstPlayerScoreTimes - _secondPlayerScoreTimes ) == 1)
+                    if (IsAdv())
                     {
-                        var advPlayer = _firstPlayerScoreTimes > _secondPlayerScoreTimes
-                            ? _firstPlayerName
-                            : _secondPlayerName;
-                        return $"{advPlayer} Adv";
+                        return $"{AdvPlayer()} Adv";
                     }
                 }
                 return LookupScore();
@@ -45,6 +42,24 @@ namespace TennisPractice
                 return "Deuce";
 
          return SomeScore();
+        }
+
+        private string AdvPlayer()
+        {
+            var advPlayer = _firstPlayerScoreTimes > _secondPlayerScoreTimes
+                ? _firstPlayerName
+                : _secondPlayerName;
+            return advPlayer;
+        }
+
+        private bool IsReadyForGamePoint()
+        {
+            return _firstPlayerScoreTimes>=3 || _secondPlayerScoreTimes>=3;
+        }
+
+        private bool IsAdv()
+        {
+            return Math.Abs(_firstPlayerScoreTimes - _secondPlayerScoreTimes ) == 1;
         }
 
         private bool IsDeuce()

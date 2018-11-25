@@ -84,6 +84,14 @@ namespace TennisPractice
             ScoreShouldBe("Jack Adv");
         }
 
+        [TestMethod]
+        public void SecondPlayerWin()
+        {
+            GivenDeuce();
+            GivenSecondPlayerTimes(1);
+            ScoreShouldBe("Jack Win");
+        }
+
         private void GivenDeuce()
         {
             GivenFirstPlayerScoreTimes(3);
