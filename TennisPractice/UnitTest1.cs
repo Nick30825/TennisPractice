@@ -53,6 +53,22 @@ namespace TennisPractice
             ScoreShouldBe("Fifteen All");
         }
 
+        [TestMethod]
+        public void Thirty_All()
+        {
+            GivenFirstPlayerScoreTimes(2);
+            GivenSecondPlayerTimes(2);
+            ScoreShouldBe("Thirty All");
+        }
+
+        [TestMethod]
+        public void Deuce()
+        {
+            GivenFirstPlayerScoreTimes(3);
+            GivenSecondPlayerTimes(3);
+            ScoreShouldBe("Deuce");
+        }
+
         private void GivenSecondPlayerTimes(int times)
         {
             for (var i = 0; i < times; i++)

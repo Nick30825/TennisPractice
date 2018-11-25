@@ -22,7 +22,10 @@ namespace TennisPractice
                 return LookupScore();
             }
 
-            return SomeScore();
+            if (_firstPlayerScoreTimes >= 3)
+                return "Deuce";
+
+         return SomeScore();
         }
 
         private string LookupScore()
