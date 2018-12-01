@@ -28,21 +28,18 @@ namespace TennisPractice
         {
             if (IsScoreDifferent() )
             {
-                if (IsReadyForGamePoint())
-                {
-                    if (IsAdv())
-                    {
-                        return $"{AdvPlayer()} Adv";
-                    }
-                    return $"{AdvPlayer()} Win";
-                }
-                return LookupScore();
+                return IsReadyForGamePoint() ? AdvState() : LookupScore();
             }
 
             if (IsDeuce())
                 return "Deuce";
 
          return SomeScore();
+        }
+
+        private string AdvState()
+        {
+            return IsAdv() ? $"{AdvPlayer()} Adv" : $"{AdvPlayer()} Win";
         }
 
         private string AdvPlayer()
