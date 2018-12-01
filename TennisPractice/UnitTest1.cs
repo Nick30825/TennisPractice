@@ -88,7 +88,7 @@ namespace TennisPractice
         public void SecondPlayerWin()
         {
             GivenDeuce();
-            GivenSecondPlayerTimes(1);
+            GivenSecondPlayerTimes(2);
             ScoreShouldBe("Jack Win");
         }
 

@@ -34,6 +34,7 @@ namespace TennisPractice
                     {
                         return $"{AdvPlayer()} Adv";
                     }
+                    return $"{AdvPlayer()} Win";
                 }
                 return LookupScore();
             }
@@ -54,7 +55,7 @@ namespace TennisPractice
 
         private bool IsReadyForGamePoint()
         {
-            return _firstPlayerScoreTimes>=3 || _secondPlayerScoreTimes>=3;
+            return _firstPlayerScoreTimes > 3 || _secondPlayerScoreTimes > 3;
         }
 
         private bool IsAdv()
