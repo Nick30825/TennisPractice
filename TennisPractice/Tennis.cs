@@ -26,15 +26,14 @@ namespace TennisPractice
 
         public String Score()
         {
-            if (IsScoreDifferent() )
-            {
-                return IsReadyForGamePoint() ? AdvState() : LookupScore();
-            }
+            return IsScoreDifferent()
+                ? (IsReadyForGamePoint() ? AdvState() : LookupScore())
+                : (IsDeuce() ? Deuce() : SomeScore());
+        }
 
-            if (IsDeuce())
-                return "Deuce";
-
-         return SomeScore();
+        private static string Deuce()
+        {
+            return "Deuce";
         }
 
         private string AdvState()
